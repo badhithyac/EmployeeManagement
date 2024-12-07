@@ -22,7 +22,7 @@ export default function EmployeeForm() {
         if (!formData.employeeEmail) newErrors.employeeEmail = "Valid Email is required";
         if (!formData.phoneNumber) {
             newErrors.phoneNumber = "Phone Number is required";
-        } else if (formData.phoneNumber.length != 10) {
+        } else if (formData.phoneNumber.length !==10) {
             newErrors.phoneNumber = "Phone Number must be at least 10 digits";
         }
         if (!formData.department) newErrors.department = "Department is required";
