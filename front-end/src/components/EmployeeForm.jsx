@@ -61,7 +61,9 @@ export default function EmployeeForm() {
     };
 
     return (
+        
         <form onSubmit={handleSubmit}>
+            <br /><br />
             <label>
                 Employee Name: <span style={{ color: 'red' }}>*</span>
                 <input

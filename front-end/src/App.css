@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Root container */
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  padding: 20px;
+  background-color: #0073b1;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Main content styles */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Footer styles */
+footer {
+  padding: 10px 20px;
+  background-color: #0073b1;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #0073b1;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+table tr:hover {
+  background-color: #f1f1f1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Form styles */
+form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #0073b1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005f91;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space buttons evenly */
+  width: 100%;
+}
+
+.button-container button {
+  flex: 1; /* Make buttons take equal space */
+  margin-right: 10px; /* Add spacing between buttons */
+}
+
+footer {
+  padding: 10px 20px;
+  background-color: #0073b1;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.nav-button {
+  background-color: #0073b1;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background-color: #005f8d;
+}
+
+.nav-button:active {
+  background-color: #004f75;
 }

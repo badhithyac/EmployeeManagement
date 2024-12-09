@@ -1,24 +1,51 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
+import './App.css';
+
+function NavigationButtons() {
+    const location = useLocation();
+    return (
+        <div className="navigation-buttons">
+            {location.pathname !== '/' && (
+                <Link to="/" className="nav-button">
+                    Employee List
+                </Link>
+            )}
+            {location.pathname !== '/add-employee' && (
+                <Link to="/add-employee" className="nav-button">
+                    Add Employee
+                </Link>
+            )}
+        </div>
+    );
+}
 
 function App() {
     return (
         <Router>
-            <div>
-                <h1>Employee Management System</h1>
-                <nav>
-                    <Link to="/">Employee List</Link> | <Link to="/add-employee">Add Employee</Link>
-                </nav>
-                <hr />
-                <Routes>
-                    {/* Route for Employee List */}
-                    <Route path="/" element={<EmployeeList />} />
-                    
-                    {/* Route for Add Employee Form */}
-                    <Route path="/add-employee" element={<EmployeeForm />} />
-                </Routes>
+            <div id="root">
+                {/* Header */}
+                <header>
+                    <h1>Employee Management System</h1>
+                </header>
+
+                {/* Navigation */}
+                <NavigationButtons />
+
+                {/* Main Content */}
+                <main>
+                    <Routes>
+                        <Route path="/" element={<EmployeeList />} />
+                        <Route path="/add-employee" element={<EmployeeForm />} />
+                    </Routes>
+                </main>
+
+                {/* Footer */}
+                <footer>
+                    <p>&copy; {new Date().getFullYear()} Employee Management System</p>
+                </footer>
             </div>
         </Router>
     );
