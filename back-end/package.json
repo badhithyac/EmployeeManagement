@@ -1,9 +1,9 @@
 {
     "name": "backend",
     "version": "1.0.0",
-    "main": "server.js",
+    "main": "script.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node script.js"
     },
     "dependencies": {
         "body-parser": "^1.20.3",

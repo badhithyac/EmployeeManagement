@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./front-end
+    ports:
+      - "3000:3000" # Map React frontend port
+    depends_on:
+      - backend
+
+  backend:
+    build: ./back-end
+    ports:
+      - "3001:3001" # Updated to match your backend server port
+    depends_on:
+      - mysql
+    env_file: ./back-end/.env # Link the .env file to the backend container
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: Poojahegde@9114
+      MYSQL_DATABASE: EmployeeManagement
+    ports:
+      - "3307:3306" # Expose MySQL port for development purposes
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

@@ -149,3 +149,46 @@ footer {
 .nav-button:active {
   background-color: #004f75;
 }
+
+/* Search and Filter Container */
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.filter-container .filter-group {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container i {
+  margin-right: 8px;
+  color: #888;
+}
+
+.filter-container input,
+.filter-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Search Input */
+.search-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  width: 300px;
+}
+
+/* Filter Dropdowns */
+.filter-dropdown {
+  display: flex;
+  align-items: center;
+}
