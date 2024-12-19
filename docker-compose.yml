@@ -7,14 +7,22 @@ services:
       - "3000:3000" # Map React frontend port
     depends_on:
       - backend
+    networks:
+      - app-network
 
   backend:
     build: ./back-end
     ports:
-      - "3001:3001" # Updated to match your backend server port
+      - "3001:3001" # Map backend server port
     depends_on:
       - mysql
     env_file: ./back-end/.env # Link the .env file to the backend container
+    entrypoint: ["bash", "./scripts/wait-for-it.sh", "mysql:3306", "--", "npm", "start"]
+
+    volumes:
+      - ./scripts/wait-for-it.sh:/app/scripts/wait-for-it.sh # Mount wait-for-it.sh into container
+    networks:
+      - app-network
 
   mysql:
     image: mysql:latest
@@ -25,6 +33,12 @@ services:
       - "3307:3306" # Expose MySQL port for development purposes
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
 
 volumes:
   mysql_data:
+
+networks:
+  app-network:
+    driver: bridge
